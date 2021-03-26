@@ -1,38 +1,40 @@
 import React from "react";
-import loginImg from "https://unsplash.com/photos/7okkFhxrxNw"
+import loginImg from "";
 
 export class Register extends React.Component {
-
-constructor(props){
+  constructor(props) {
     super(props);
-}
+  }
 
-render(){
-    return <div className="base-container">
-        <div className="header">Login</div>
+  render() {
+    return (
+      <div className="base-container" ref={this.props.containerRef}>
+        <div className="header">Register</div>
         <div className="content">
-            <div className="image">
-                <img src={loginImg}/>
+          <div className="image">
+            <img src={loginImg} />
+          </div>
+          <div className="form">
+            <div className="form-group">
+              <label htmlFor="username">Username</label>
+              <input type="text" name="username" placeholder="username" />
             </div>
-            <div className="form">
-             <div className="form-group">
-                 <label htmlFor="username"></label>
-                 <input type="text" name="username" placeholder="userename"/>
-                </div> 
-             <div className="form-group">
-                 <label htmlFor="email"></label>
-                 <input type="email" name="email" placeholder="email"/>
-                </div> 
-                <div className="form-group">
-                 <label htmlFor="password"></label>
-                 <input type="password" name="password" placeholder="password"/>
-                </div> 
+            <div className="form-group">
+              <label htmlFor="email">Email</label>
+              <input type="text" name="email" placeholder="email" />
             </div>
+            <div className="form-group">
+              <label htmlFor="password">Password</label>
+              <input type="text" name="password" placeholder="password" />
+            </div>
+          </div>
         </div>
         <div className="footer">
-            <button type="button" className="btn">Register</button>
+          <button type="button" className="btn">
+            Register
+          </button>
         </div>
-    </div>
-   
-}
+      </div>
+    );
+  }
 }
