@@ -1,17 +1,21 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+
 const path = require('path');
 const mongoose = require('mongoose');
 const mongodb = require('mongodb');
 const compression = require("compression");
 const logger = require("morgan");
 
+
 const app = express();
-app.use(express.static(path.join(__dirname, 'build')));
+
 const PORT = process.env.PORT || 3000;
+
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.resolve(__dirname, 'public')));
+
 
 app.use(logger("dev"));
 app.use(express.static(path.join(__dirname, 'build')));
@@ -24,6 +28,7 @@ mongoose.connect("mongodb://localhost/test", {
 mongoose.connection.on('connected', () => {
   console.log('Mongoose is connected');
 });
+
 
 
 
@@ -43,6 +48,7 @@ app.get('/view-feedbacks',  function(req, res) {
       });
   });
 });
+
 
 
 app.get('/', function (req, res) {
