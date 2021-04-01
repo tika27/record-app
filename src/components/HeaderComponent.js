@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "./App.scss";
 
 class HeaderComponent extends Component {
   constructor(props) {
@@ -13,7 +12,7 @@ class HeaderComponent extends Component {
       <div>
         <header>
           <nav className="navbar navbar-expand-md navbar-dark bg-dark">
-            Employee Management System
+            Employee Management Services!
           </nav>
         </header>
       </div>
