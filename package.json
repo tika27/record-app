@@ -10,7 +10,7 @@
     "body-parser": "^1.19.0",
     "bootstrap": "^4.6.0",
     "express": "^4.17.1",
-    "mongoose": "^5.12.2",
+    "mongoose": "^5.12.3",
     "morgan": "^1.10.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -20,11 +20,12 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start:dev": "concurrently \"react-scripts start\" \"node server.js\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "start:dev": "concurrently \"react-scripts start\" \"node server.js\"",
-    "seed": "node scripts/seedDB.js"
+    "seed": "node scripts/seedDB.js",
+    "back": "node server.js"
   },
   "eslintConfig": {
     "extends": [
@@ -45,6 +46,7 @@
     ]
   },
   "devDependencies": {
+    "concurrently": "^6.0.0",
     "node-sass": "^5.0.0"
   }
 }
