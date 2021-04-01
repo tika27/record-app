@@ -1,6 +1,8 @@
 import axios from "axios";
+export { Login } from "./login";
+export { Register } from "./register";
 
-const EMPLOYEE_API_BASE_URL = "";
+const EMPLOYEE_API_BASE_URL = "localhost";
 
 class EmployeeService {
   getEmployees() {

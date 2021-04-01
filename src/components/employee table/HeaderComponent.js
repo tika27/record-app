@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./App.scss";
 
 class HeaderComponent extends Component {
   constructor(props) {
