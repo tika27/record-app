@@ -17,7 +17,7 @@ class CreateEmployeeComponent extends Component {
         this.changeLastNameHandler = this.changeLastNameHandler.bind(this);
         this.saveOrUpdateEmployee = this.saveOrUpdateEmployee.bind(this);
     }
-
+        
     // step 3
     componentDidMount(){
 
@@ -114,5 +114,6 @@ class CreateEmployeeComponent extends Component {
         )
     }
 }
+// console.log(state);
 
 export default CreateEmployeeComponent
