@@ -15,6 +15,7 @@ class ListEmployeeComponent extends Component {
     }
 
     deleteEmployee(id){
+        console.log(id, this);
         EmployeeService.deleteEmployee(id).then( res => {
             this.setState({employees: this.state.employees.filter(employee => employee.id !== id)});
         });
@@ -59,14 +60,14 @@ class ListEmployeeComponent extends Component {
                                 {
                                     this.state.employees.map(
                                         employee => 
-                                        <tr key = {employee.id}>
+                                        <tr key = {employee._id}>
                                              <td> { employee.firstName} </td>   
                                              <td> {employee.lastName}</td>
                                              <td> {employee.emailId}</td>
                                              <td>
-                                                 <button onClick={ () => this.editEmployee(employee.id)} className="btn btn-info">Update </button>
-                                                 <button style={{marginLeft: "10px"}} onClick={ () => this.deleteEmployee(employee.id)} className="btn btn-danger">Delete </button>
-                                                 <button style={{marginLeft: "10px"}} onClick={ () => this.viewEmployee(employee.id)} className="btn btn-info">View </button>
+                                                 <button onClick={ () => this.editEmployee(employee._id)} className="btn btn-info">Update </button>
+                                                 <button style={{marginLeft: "10px"}} onClick={ () => this.deleteEmployee(employee._id)} className="btn btn-danger">Delete </button>
+                                                 <button style={{marginLeft: "10px"}} onClick={ () => this.viewEmployee(employee._id)} className="btn btn-info">View </button>
                                              </td>
                                         </tr>
                                     )

@@ -14,6 +14,7 @@ export default {
         },
     
         saveRegister: function(registerData) {
+            
             return axios.post("/api/register", registerData);
         },
     
