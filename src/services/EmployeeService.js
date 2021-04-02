@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const EMPLOYEE_API_BASE_URL = "http://mongodb://localhost/registerdusers";
+const EMPLOYEE_API_BASE_URL = "mongodb://localhost/registerdusers";
 
 class EmployeeService {
   getEmployees() {
