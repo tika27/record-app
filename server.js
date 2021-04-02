@@ -6,8 +6,10 @@ const routes = require("./routes");
 const mongoose = require('mongoose');
 const app = express();
 
+
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/registerdusers"
+  
 );
 
 app.use(express.urlencoded({ extended: true }));
@@ -25,11 +27,12 @@ const PORT = process.env.PORT || 8080;
 // });
 
 
+
 app.listen(PORT, function() {
   console.log(`Server now listening on PORT ${PORT}!`);
 });
 
-
+//app.use('/api/register', require('./controllers/registerController.js'));
 //new
 
 

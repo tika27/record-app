@@ -10,6 +10,10 @@ const registerSeed = [
         lastName: "Fontes"
     },
     {
+        firstName: "neamen",
+        lastName: "Dobamo"
+    },
+    {
         firstName: "Johnny",
         lastName: "Lawrence"
     },
@@ -17,7 +21,10 @@ const registerSeed = [
         firstName: "Daniel",
         lastName: "Larusso"
     },
-
+     {
+        firstName: "asdfg",
+        lastName: "asdfgh"
+    },
 ];
 
 db.Register

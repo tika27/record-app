@@ -2,6 +2,7 @@ const db = require("../models");
 
 module.exports = {
     findAll: function(req, res) {
+      console.log(res);
         db.Register
           .find(req.query)
           .sort({ date: -1 })
@@ -15,7 +16,7 @@ module.exports = {
           .catch(err => res.status(422).json(err));
       },
       create: function(req, res) {
-          console.log(req);
+          console.log(res);
         db.Register
           .create(req.query)
           .then(dbModel => res.json(dbModel))
