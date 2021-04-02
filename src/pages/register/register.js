@@ -52,6 +52,6 @@ function Register() {
     };
 
     return (
-        
+        <CreateEmployeeComponent />
     )
 }
