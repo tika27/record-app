@@ -28,5 +28,26 @@ function Register() {
                 .catch(err => console.log(err));
     };
 
+    function handleInputChange(event) {
+        const { name, value } = event.target;
+        setFormObject({...formObject, [name]: value})
+    };
 
+    function handleFormSubmit(event) {
+        event.preventDefault();
+        if (formObject.firstName && formObject.lastName) {
+            API.saveRegister({
+                firstName: formObject.firstName,
+                lastName: formObject.lastName,
+                email: formObject.email
+            })
+                .then(() => setFormObject({
+                    firstName: "",
+                    lastName: "",
+                    email: ""
+                }))
+                    .then(() => loadRegister())
+                        .catch(err => console.log(err));
+        }
+    }
 }
