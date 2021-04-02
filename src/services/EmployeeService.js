@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const EMPLOYEE_API_BASE_URL = "http://localhost:8080/api/v1/employees";
+const EMPLOYEE_API_BASE_URL = "http://localhost:8080/api/register";
 
 class EmployeeService {
   getEmployees() {
@@ -20,7 +20,14 @@ class EmployeeService {
   }
 
   deleteEmployee(employeeId) {
-    return axios.delete(EMPLOYEE_API_BASE_URL + "/" + employeeId);
+    const config = {
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      method: "DELETE",
+    };
+    return axios.delete(EMPLOYEE_API_BASE_URL + "/" + employeeId, config);
   }
 }
 
