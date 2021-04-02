@@ -115,6 +115,6 @@ class CreateEmployeeComponent extends Component {
         )
     }
 }
-// console.log(state);
+console.log(state);
 
 export default CreateEmployeeComponent
