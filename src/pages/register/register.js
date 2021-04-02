@@ -49,5 +49,9 @@ function Register() {
                     .then(() => loadRegister())
                         .catch(err => console.log(err));
         }
-    }
+    };
+
+    return (
+        
+    )
 }
