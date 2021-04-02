@@ -11,10 +11,12 @@ mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/registerdusers"
 );
 
+
+
 app.use(
   cors({
     origin: "*",
-    methods: "GET,POST,PUT,Delete",
+    methods: "GET,POST,PUT,DELETE",
     allowedHeaders: "Content-Type,Authorization",
     credentials: true,
     preflightContinue: true,

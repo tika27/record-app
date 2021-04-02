@@ -14,18 +14,7 @@ export default {
         },
     
         saveRegister: function(registerData) {
-            const config = {
-                headers: {
-                  Accept: "application/json",
-                  "Content-Type": "application/json",
-                  "Access-Control-Allow-Origin": "*",
-                },
-                method: "GET",
-                url: `${url}/all`,
-                withCredentials: true,
-                crossorigin: true,
-                "Access-Control-Allow-Origin": "*",
-              };
+            
             return axios.post("/api/register", registerData);
         },
     

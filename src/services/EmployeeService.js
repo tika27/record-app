@@ -20,7 +20,14 @@ class EmployeeService {
   }
 
   deleteEmployee(employeeId) {
-    return axios.delete(EMPLOYEE_API_BASE_URL + "/" + employeeId);
+    const config = {
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      method: "DELETE",
+    };
+    return axios.delete(EMPLOYEE_API_BASE_URL + "/" + employeeId, config);
   }
 }
 
