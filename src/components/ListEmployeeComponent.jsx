@@ -49,10 +49,10 @@ class ListEmployeeComponent extends Component {
 
                             <thead>
                                 <tr>
-                                    <th> Employee First Name</th>
-                                    <th> Employee Last Name</th>
+                                    <th>  First Name</th>
+                                    <th>  Last Name</th>
                                     
-                                    <th> Employee Email Id</th>
+                                    <th>  Email</th>
                                     
                                     <th> Actions</th>
                                     
