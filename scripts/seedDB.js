@@ -5,36 +5,27 @@ const db = require("../models");
 mongoose.connect("mongodb://localhost/registerdusers");
 
 const registerSeed = [
-    {
-        firstName: "Brandon",
-        lastName: "Fontes"
-    },
-    {
-        firstName: "neamen",
-        lastName: "Dobamo"
-    },
-    {
-        firstName: "Johnny",
-        lastName: "Lawrence"
-    },
-    {
-        firstName: "Daniel",
-        lastName: "Larusso"
-    },
-     {
-        firstName: "asdfg",
-        lastName: "asdfgh"
-    },
+  {
+    firstName: "Stephen",
+    lastName: "Clark",
+  },
+  {
+    firstName: "Johnny",
+    lastName: "Lawrence",
+  },
+  {
+    firstName: "Daniel",
+    lastName: "Larusso",
+  },
 ];
 
-db.Register
-  .remove({})
+db.Register.remove({})
   .then(() => db.Register.collection.insertMany(registerSeed))
-  .then(data => {
+  .then((data) => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);
   })
-  .catch(err => {
+  .catch((err) => {
     console.error(err);
     process.exit(1);
   });

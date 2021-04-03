@@ -2,12 +2,12 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
-import ListEmployeeComponent from './components/employeeTable/ListEmployeeComponent';
-import HeaderComponent from './components/employeeTable/HeaderComponent';
-import FooterComponent from './components/employeeTable/FooterComponent';
-import CreateEmployeeComponent from './components/employeeTable/CreateEmployeeComponent';
-import UpdateEmployeeComponent from './components/employeeTable/UpdateEmployeeComponent';
-import ViewEmployeeComponent from './components/employeeTable/ViewEmployeeComponent';
+import ListEmployeeComponent from './components/ListEmployeeComponent';
+import HeaderComponent from './components/HeaderComponent';
+import FooterComponent from './components/FooterComponent';
+import CreateEmployeeComponent from './components/CreateEmployeeComponent';
+import UpdateEmployeeComponent from './components/UpdateEmployeeComponent';
+import ViewEmployeeComponent from './components/ViewEmployeeComponent';
 
 function App() {
   return (

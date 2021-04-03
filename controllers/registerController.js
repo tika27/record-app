@@ -2,9 +2,8 @@ const db = require("../models");
 
 module.exports = {
     findAll: function(req, res) {
-      console.log(res);
         db.Register
-          .find(req.query)
+          .find(req.body)
           .sort({ date: -1 })
           .then(dbModel => res.json(dbModel))
           .catch(err => res.status(422).json(err));
@@ -16,15 +15,14 @@ module.exports = {
           .catch(err => res.status(422).json(err));
       },
       create: function(req, res) {
-          console.log(res);
         db.Register
-          .create(req.query)
+          .create(req.body)
           .then(dbModel => res.json(dbModel))
           .catch(err => res.status(422).json(err));
       },
       update: function(req, res) {
         db.Register
-          .findOneAndUpdate({ _id: req.params.id }, req.query)
+          .findOneAndUpdate({ _id: req.params.id }, req.body)
           .then(dbModel => res.json(dbModel))
           .catch(err => res.status(422).json(err));
       },
