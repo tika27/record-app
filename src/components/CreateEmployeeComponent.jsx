@@ -12,7 +12,9 @@ class CreateEmployeeComponent extends Component {
             id: this.props.match.params.id,
             firstName: '',
             lastName: '',
-            emailId: ''
+            emailId: '',
+            salary: '',
+
         }
         this.changeFirstNameHandler = this.changeFirstNameHandler.bind(this);
         this.changeLastNameHandler = this.changeLastNameHandler.bind(this);
@@ -30,7 +32,8 @@ class CreateEmployeeComponent extends Component {
                 let employee = res.data;
                 this.setState({firstName: employee.firstName,
                     lastName: employee.lastName,
-                    emailId : employee.emailId
+                    emailId : employee.emailId,
+                    salary: employee.salary
                 });
             });
         }        
@@ -101,6 +104,11 @@ class CreateEmployeeComponent extends Component {
                                             <label> Email Id: </label>
                                             <input placeholder="Email Address" name="emailId" className="form-control" 
                                                 value={this.state.emailId} onChange={this.changeEmailHandler}/>
+                                        </div>
+                                        <div className = "form-group">
+                                            <label> Salary: </label>
+                                            <input placeholder="Salary" name="Salary" className="form-control" 
+                                                value={this.state.salary} onChange={this.changeSalary}/>
                                         </div>
 
                                         <button className="btn btn-success" onClick={this.saveOrUpdateEmployee}>Save</button>
