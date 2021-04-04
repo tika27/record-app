@@ -8,7 +8,8 @@ function Register() {
         firstName: "",
         lastName: "",
         email: "",
-        contact: ""
+        contact: "",
+        gender: ""
     })
 
     useEffect(() => {

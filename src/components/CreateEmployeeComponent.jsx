@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Form, Col } from 'react-bootstrap'
 import EmployeeService from '../services/EmployeeService';
 
 class CreateEmployeeComponent extends Component {
@@ -29,14 +30,15 @@ class CreateEmployeeComponent extends Component {
                 this.setState({firstName: employee.firstName,
                     lastName: employee.lastName,
                     emailId : employee.emailId,
-                    contact: employee.contact
+                    contact: employee.contact,
+                    gender: employee.gender
                 });
             });
         }        
     }
     saveOrUpdateEmployee = (e) => {
         e.preventDefault();
-        let employee = {firstName: this.state.firstName, lastName: this.state.lastName, emailId: this.state.emailId, contact : this.state.contact};
+        let employee = {firstName: this.state.firstName, lastName: this.state.lastName, emailId: this.state.emailId, contact : this.state.contact, gender: this.state.gender};
         console.log('employee => ' + JSON.stringify(employee));
 
         // step 5
@@ -65,6 +67,10 @@ class CreateEmployeeComponent extends Component {
     
     changeContactHandler= (event) => {
         this.setState({contact: event.target.value});
+    }
+    
+    changeGenderHandler= (event) => {
+        this.setState({gender: event.target.value});
     }
 
     cancel(){
@@ -110,6 +116,17 @@ class CreateEmployeeComponent extends Component {
                                             <label> Contact No: </label>
                                             <input placeholder="Contact No" name="contact" className="form-control" 
                                                 value={this.state.contact} onChange={this.changeContactHandler}/>
+                                        </div>
+
+                                        <div className = "row">
+                                            <label> Gender: &nbsp;   </label>
+                                                <div >
+                                                    <Col>
+                                                        <Form.Check checked = {this.state.gender === "male"}  onChange={this.changeGenderHandler} required name = "gender" label = "Male" inline type = "radio" value= "male" ></Form.Check>
+                                                        <Form.Check checked = {this.state.gender === "female"}  onChange={this.changeGenderHandler} required name = "gender" label = "Female" inline type = "radio" value = "female" ></Form.Check>
+                                                    </Col>
+                                                    
+                                                </div>
                                         </div>
 
                                         <button className="btn btn-success" onClick={this.saveOrUpdateEmployee}>Save</button>
