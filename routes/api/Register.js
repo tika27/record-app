@@ -1,5 +1,7 @@
 const router = require("express").Router();
-const registerController = require("../../controllers/registerController.js");
+const registerController = require("../../controllers/registerController");
+
+
 
 router.route("/")
     .get(registerController.findAll)
@@ -10,5 +12,7 @@ router.route("/")
         .get(registerController.findById)
         .put(registerController.update)
         .delete(registerController.remove);
+ 
+
 
     module.exports = router;
