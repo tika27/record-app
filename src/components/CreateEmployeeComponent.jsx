@@ -35,12 +35,8 @@ class CreateEmployeeComponent extends Component {
                 this.setState({firstName: employee.firstName,
                     lastName: employee.lastName,
                     emailId : employee.emailId,
-<<<<<<< HEAD
-                    salary: employee.salary
-=======
                     contact: employee.contact,
                     gender: employee.gender
->>>>>>> origin
                 });
             });
         }        
