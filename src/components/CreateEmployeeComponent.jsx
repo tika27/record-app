@@ -38,7 +38,8 @@ class CreateEmployeeComponent extends Component {
     }
     saveOrUpdateEmployee = (e) => {
         e.preventDefault();
-        let employee = {firstName: this.state.firstName, lastName: this.state.lastName, emailId: this.state.emailId, contact : this.state.contact, gender: this.state.gender};
+        let employee = {firstName: this.state.firstName, lastName: this.state.lastName, emailId: this.state.emailId,
+             contact : this.state.contact, gender: this.state.gender, salary: this.state.salary};
         console.log('employee => ' + JSON.stringify(employee));
 
         // step 5
@@ -69,7 +70,10 @@ class CreateEmployeeComponent extends Component {
         this.setState({contact: event.target.value});
     }
     
-    changeGenderHandler= (event) => {
+    changeSalaryHandler= (event) => {
+        this.setState({salary: event.target.value});
+    }
+changeGenderHandler= (event) => {
         this.setState({gender: event.target.value});
     }
 
@@ -118,7 +122,7 @@ class CreateEmployeeComponent extends Component {
                                                 value={this.state.contact} onChange={this.changeContactHandler}/>
                                         </div>
 
-                                        <div className = "row">
+                                        <div className = "form-group">
                                             <label> Gender: &nbsp;   </label>
                                                 <div >
                                                     <Col>
@@ -127,6 +131,12 @@ class CreateEmployeeComponent extends Component {
                                                     </Col>
                                                     
                                                 </div>
+                                        </div>
+
+                                        <div className = "form-group">
+                                            <label> Salary: </label>
+                                            <input placeholder="Salary" name="contact" className="form-control" 
+                                                value={this.state.salary} onChange={this.changeSalaryHandler}/>
                                         </div>
 
                                         <button className="btn btn-success" onClick={this.saveOrUpdateEmployee}>Save</button>

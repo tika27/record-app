@@ -6,7 +6,9 @@ const regSchema = new Schema({
     lastName: {type: String, required: true },
     emailId: {type: String, required: true},
     contact: {type: String, required: false},
-    gender: {type: String, required: true}
+    gender: {type: String, required: true},
+    salary: {type: Number, required: false}
+
 
 });
 
