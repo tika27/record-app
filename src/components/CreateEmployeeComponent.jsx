@@ -138,12 +138,14 @@ changeGenderHandler= (event) => {
                                                     
                                                 </div>
                                         </div>
-
                                         <div className = "form-group">
                                             <label> Salary: </label>
                                             <input placeholder="Salary" name="contact" className="form-control" 
                                                 value={this.state.salary} onChange={this.changeSalaryHandler}/>
                                         </div>
+
+                                      
+                                       
 
                                         <button className="btn btn-success" onClick={this.saveOrUpdateEmployee}>Save</button>
                                         <button className="btn btn-danger" onClick={this.cancel.bind(this)} style={{marginLeft: "10px"}}>Cancel</button>
