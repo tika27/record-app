@@ -7,8 +7,10 @@ function Register() {
     const [formObject, setFormObject] = useState({
         firstName: "",
         lastName: "",
-        email: ""
-        
+        email: "",
+        contact: "",
+        gender: "",
+        salary: 0,
     })
 
     useEffect(() => {
