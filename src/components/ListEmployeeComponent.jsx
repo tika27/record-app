@@ -50,12 +50,18 @@ class ListEmployeeComponent extends Component {
 
                             <thead>
                                 <tr>
-                                    <th> Employee First Name</th>
-                                    <th> Employee Last Name</th>
-                                    <th> Employee Email Id</th>
+                                    <th>  First Name</th>
+                                    <th>  Last Name</th>
+                                    
+                                    <th>  Email</th>
+                                    
                                     <th> Actions</th>
+                                    
                                 </tr>
+                                
                             </thead>
+
+                            
                             <tbody>
                                 {
                                     this.state.employees.map(
@@ -63,6 +69,7 @@ class ListEmployeeComponent extends Component {
                                         <tr key = {employee._id}>
                                              <td> { employee.firstName} </td>   
                                              <td> {employee.lastName}</td>
+                                              
                                              <td> {employee.emailId}</td>
                                              <td>
                                                  <button onClick={ () => this.editEmployee(employee._id)} className="btn btn-info">Update </button>

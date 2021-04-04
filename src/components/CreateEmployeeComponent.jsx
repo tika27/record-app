@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Form, Col } from 'react-bootstrap'
 import EmployeeService from '../services/EmployeeService';
                                                                                                                                 
 
@@ -34,14 +35,20 @@ class CreateEmployeeComponent extends Component {
                 this.setState({firstName: employee.firstName,
                     lastName: employee.lastName,
                     emailId : employee.emailId,
+<<<<<<< HEAD
                     salary: employee.salary
+=======
+                    contact: employee.contact,
+                    gender: employee.gender
+>>>>>>> origin
                 });
             });
         }        
     }
     saveOrUpdateEmployee = (e) => {
         e.preventDefault();
-        let employee = {firstName: this.state.firstName, lastName: this.state.lastName, emailId: this.state.emailId};
+        let employee = {firstName: this.state.firstName, lastName: this.state.lastName, emailId: this.state.emailId,
+             contact : this.state.contact, gender: this.state.gender, salary: this.state.salary};
         console.log('employee => ' + JSON.stringify(employee));
 
         // step 5
@@ -66,6 +73,17 @@ class CreateEmployeeComponent extends Component {
 
     changeEmailHandler= (event) => {
         this.setState({emailId: event.target.value});
+    }
+    
+    changeContactHandler= (event) => {
+        this.setState({contact: event.target.value});
+    }
+    
+    changeSalaryHandler= (event) => {
+        this.setState({salary: event.target.value});
+    }
+changeGenderHandler= (event) => {
+        this.setState({gender: event.target.value});
     }
 
     cancel(){
@@ -110,6 +128,29 @@ class CreateEmployeeComponent extends Component {
                                             <label> Salary: </label>
                                             <input placeholder="Salary" name="Salary" className="form-control" 
                                                 value={this.state.salary} onChange={this.changeSalary}/>
+                                        </div>
+
+                                         <div className = "form-group">
+                                            <label> Contact No: </label>
+                                            <input placeholder="Contact No" name="contact" className="form-control" 
+                                                value={this.state.contact} onChange={this.changeContactHandler}/>
+                                        </div>
+
+                                        <div className = "form-group">
+                                            <label> Gender: &nbsp;   </label>
+                                                <div >
+                                                    <Col>
+                                                        <Form.Check checked = {this.state.gender === "male"}  onChange={this.changeGenderHandler} required name = "gender" label = "Male" inline type = "radio" value= "male" ></Form.Check>
+                                                        <Form.Check checked = {this.state.gender === "female"}  onChange={this.changeGenderHandler} required name = "gender" label = "Female" inline type = "radio" value = "female" ></Form.Check>
+                                                    </Col>
+                                                    
+                                                </div>
+                                        </div>
+
+                                        <div className = "form-group">
+                                            <label> Salary: </label>
+                                            <input placeholder="Salary" name="contact" className="form-control" 
+                                                value={this.state.salary} onChange={this.changeSalaryHandler}/>
                                         </div>
 
                                         <button className="btn btn-success" onClick={this.saveOrUpdateEmployee}>Save</button>
