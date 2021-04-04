@@ -120,11 +120,7 @@ changeGenderHandler= (event) => {
                                             <input placeholder="Email Address" name="emailId" className="form-control" 
                                                 value={this.state.emailId} onChange={this.changeEmailHandler}/>
                                         </div>
-                                        <div className = "form-group">
-                                            <label> Salary: </label>
-                                            <input placeholder="Salary" name="Salary" className="form-control" 
-                                                value={this.state.salary} onChange={this.changeSalary}/>
-                                        </div>
+                                       
 
                                          <div className = "form-group">
                                             <label> Contact No: </label>
