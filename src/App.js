@@ -11,8 +11,6 @@ import ListEmployeeComponent from "./components/ListEmployeeComponent";
 import CreeateSalaryComponent from "./components/SalaryComponents/CreateSalaryComponent";
 import ListSalaryComponent from "./components/SalaryComponents/ListSalaryComponent";
 import ViewSalaryComponent from "./components/SalaryComponents/ViewSalaryComponent";
-import React from "react";
-import logo from "./logo.svg";
 
 function App() {
   return (
