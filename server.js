@@ -7,13 +7,25 @@ const routes = require("./routes");
 const mongoose = require('mongoose');
 const app = express();
 
+const MONGODB_URI = "mongodb+srv://brandon:boi@cluster0.9at6y.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/registerdusers"
+  "mongodb+srv://brandon:boi@cluster0.9at6y.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", {
+    useNewUrlParser: true,
+  useFindAndModify: false
+  }
+  
   
 );
 
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('build'));
+}
 
+
+mongoose.connection.on('connected', () => {
+  console.log('Mongoose is connected');
+});
 
 app.use(
   cors({
@@ -42,7 +54,5 @@ app.listen(PORT, function() {
   console.log(`Server now listening on PORT ${PORT}!`);
 });
 
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-}
+
 
