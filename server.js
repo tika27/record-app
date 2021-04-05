@@ -10,7 +10,7 @@ const app = express();
 const MONGODB_URI = "mongodb+srv://brandon:boi@cluster0.9at6y.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
 mongoose.connect(
-  "mongodb+srv://brandon:boi@cluster0.9at6y.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", {
+  process.env.MONGODB_URI || "mongodb://localhost/registerdusers", {
     useNewUrlParser: true,
   useFindAndModify: false
   }
