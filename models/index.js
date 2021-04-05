@@ -1,3 +1,5 @@
 module.exports = {
-    Register: require("./reg")
+    Register: require("./reg"),
+    Salary: require("./salary")
+
 };
