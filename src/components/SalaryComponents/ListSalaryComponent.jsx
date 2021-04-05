@@ -6,7 +6,8 @@ class ListSalaryComponent extends Component {
         super(props)
 
         this.state = {
-                salaries: []
+                salaries: [],
+                filterStr: ''
         }
         this.addSalary = this.addSalary.bind(this);
         this.editSalary = this.editSalary.bind(this);
@@ -23,6 +24,12 @@ class ListSalaryComponent extends Component {
     }
     editSalary(id){
         this.props.history.push(`/add-salary/${id}`);
+    }
+    changeSearchHandler= (event) => {
+
+        this.setState({filterStr: event.target.value});
+        
+
     }
 
     componentDidMount(){
@@ -43,6 +50,12 @@ class ListSalaryComponent extends Component {
                     <button className="btn btn-primary" onClick={this.addSalary}> Add Salary</button>
                  </div>
                  <br></br>
+                 <form>
+                <div className = "form-group">
+                    <input placeholder="Search" name="filterStr" className="form-control" 
+                        value={this.state.filterStr} onChange={this.changeSearchHandler}/>
+                </div>
+                 </form>
                  <div className = "row">
                         <table className = "table table-striped table-bordered">
 
@@ -62,8 +75,8 @@ class ListSalaryComponent extends Component {
                             
                             <tbody>
                                 {
-                                    this.state.salaries.map(
-                                        salary => 
+                                    this.state.salaries.filter(salary => salary.firstName.toLowerCase().includes(this.state.filterStr.toLowerCase())).map(
+                                        salary =>  
                                         <tr key = {salary._id}>
                                              <td> { salary.firstName} </td>   
                                              <td> {salary.lastName}</td>
