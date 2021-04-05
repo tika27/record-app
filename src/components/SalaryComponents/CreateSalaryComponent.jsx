@@ -30,6 +30,7 @@ class CreateSalaryComponent extends Component {
                 this.setState({
                     firstName: salary.firstName,
                     lastName: salary.lastName,
+                    salary: salary.salary
                 });
             });
         }        
@@ -45,7 +46,7 @@ class CreateSalaryComponent extends Component {
                 this.props.history.push('/salaries');
             });
         }else{
-            SalaryService.updateEmployee(salary, this.state.id).then( res => {
+            SalaryService.updateSalary(salary, this.state.id).then( res => {
                 this.props.history.push('/salaries');
             });
         }
@@ -66,7 +67,7 @@ class CreateSalaryComponent extends Component {
     }
  
     cancel(){
-        this.props.history.push('/salaires');
+        this.props.history.push('/salaries');
     }
 
     getTitle(){

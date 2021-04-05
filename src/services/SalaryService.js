@@ -4,7 +4,7 @@ const EMPLOYEE_API_BASE_URL = "http://localhost:8080/api/salary";
 
 class SalaryService {
 
-    getSalary(){
+    getSalaries(){
         return axios.get(EMPLOYEE_API_BASE_URL);
     }
 

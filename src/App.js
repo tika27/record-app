@@ -9,6 +9,8 @@ import ViewEmployeeComponent from './components/ViewEmployeeComponent';
 import DashboardComponent from './components/DashboardComponent';
 import ListEmployeeComponent from './components/ListEmployeeComponent';
 import CreeateSalaryComponent from './components/SalaryComponents/CreateSalaryComponent';
+import ListSalaryComponent from './components/SalaryComponents/ListSalaryComponent';
+import ViewSalaryComponent from './components/SalaryComponents/ViewSalaryComponent';
 
 
 function App() {
@@ -24,6 +26,10 @@ function App() {
                           <Route path = "/view-employee/:id" component = {ViewEmployeeComponent}></Route>
                           <Route path = "/dashboard" component = {DashboardComponent}></Route>
                           <Route path = "/add-salary/:id" component = {CreeateSalaryComponent}></Route>
+                          <Route path = "/salaries" component = {ListSalaryComponent}></Route>
+                          <Route path = "/view-salary/:id" component = {ViewSalaryComponent}></Route>
+
+
 
                           {/* <Route path = "/update-employee/:id" component = {UpdateEmployeeComponent}></Route> */}
                     </Switch>
