@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+
 class FooterComponent extends Component {
     constructor(props) {
         super(props)
@@ -12,7 +13,8 @@ class FooterComponent extends Component {
     render() {
         return (
             <div>
-                <footer className = "footer">
+            
+                <footer className  = "footer">
                     <span className="text-muted">The Grads</span>
                 </footer>
             </div>

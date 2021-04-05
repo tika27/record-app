@@ -7,7 +7,9 @@ class ListEmployeeComponent extends Component {
         super(props)
 
         this.state = {
-                employees: []
+                employees: [],
+                filteredEmployees: [],
+                filterStr: ''
         }
         this.addEmployee = this.addEmployee.bind(this);
         this.editEmployee = this.editEmployee.bind(this);
@@ -33,6 +35,13 @@ class ListEmployeeComponent extends Component {
         });
     }
 
+     changeSearchHandler= (event) => {
+
+        this.setState({filterStr: event.target.value});
+        
+
+    }
+
     addEmployee(){
         this.props.history.push('/add-employee/_add');
     }
@@ -45,6 +54,12 @@ class ListEmployeeComponent extends Component {
                     <button className="btn btn-primary" onClick={this.addEmployee}> Add Employee</button>
                  </div>
                  <br></br>
+                 <form>
+                <div className = "form-group">
+                    <input placeholder="Search" name="filterStr" className="form-control" 
+                        value={this.state.filterStr} onChange={this.changeSearchHandler}/>
+                </div>
+                 </form>
                  <div className = "row">
                         <table className = "table table-striped table-bordered">
 
@@ -64,7 +79,7 @@ class ListEmployeeComponent extends Component {
                             
                             <tbody>
                                 {
-                                    this.state.employees.map(
+                                   this.state.employees.filter(employee => employee.firstName.toLowerCase().includes(this.state.filterStr.toLowerCase())).map(
                                         employee => 
                                         <tr key = {employee._id}>
                                              <td> { employee.firstName} </td>   

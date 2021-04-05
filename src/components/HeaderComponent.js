@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import logo from "../image/logo.png";
 
 class HeaderComponent extends Component {
   constructor(props) {
@@ -12,8 +13,8 @@ class HeaderComponent extends Component {
       <div>
         <header>
           <nav className="navbar navbar-expand-md navbar-light bg-light">
-            Employee Management System
-            <ul style={{ float: "left", margin: 0, padding: 0 }}>
+            <img src={logo} alt="Logo" />;
+            <ul style={{ float: "left" }}>
               <li style={{ float: "left" }}>
                 <a href="/employees">Home</a>
               </li>
