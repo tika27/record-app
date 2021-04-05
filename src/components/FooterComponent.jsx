@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import './Footer.css';
+
 
 class FooterComponent extends Component {
     constructor(props) {
@@ -12,7 +14,8 @@ class FooterComponent extends Component {
     render() {
         return (
             <div>
-                <footer className = "footer">
+            
+                <footer className  = "footer">
                     <span className="text-muted">The Grads</span>
                 </footer>
             </div>
