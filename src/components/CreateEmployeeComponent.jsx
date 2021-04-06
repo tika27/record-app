@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import { Form, Col } from 'react-bootstrap'
 import EmployeeService from '../services/EmployeeService';
+                                                                                                                                
+
+
 
 class CreateEmployeeComponent extends Component {
     constructor(props) {
@@ -11,7 +14,9 @@ class CreateEmployeeComponent extends Component {
             id: this.props.match.params.id,
             firstName: '',
             lastName: '',
-            emailId: ''
+            emailId: '',
+            salary: '',
+
         }
         this.changeFirstNameHandler = this.changeFirstNameHandler.bind(this);
         this.changeLastNameHandler = this.changeLastNameHandler.bind(this);
@@ -115,6 +120,7 @@ changeGenderHandler= (event) => {
                                             <input placeholder="Email Address" name="emailId" className="form-control" 
                                                 value={this.state.emailId} onChange={this.changeEmailHandler}/>
                                         </div>
+                                       
 
                                          <div className = "form-group">
                                             <label> Contact No: </label>
@@ -132,12 +138,14 @@ changeGenderHandler= (event) => {
                                                     
                                                 </div>
                                         </div>
-
                                         <div className = "form-group">
                                             <label> Salary: </label>
                                             <input placeholder="Salary" name="contact" className="form-control" 
                                                 value={this.state.salary} onChange={this.changeSalaryHandler}/>
                                         </div>
+
+                                      
+                                       
 
                                         <button className="btn btn-success" onClick={this.saveOrUpdateEmployee}>Save</button>
                                         <button className="btn btn-danger" onClick={this.cancel.bind(this)} style={{marginLeft: "10px"}}>Cancel</button>
@@ -151,6 +159,5 @@ changeGenderHandler= (event) => {
         )
     }
 }
-// console.log(state);
 
 export default CreateEmployeeComponent
